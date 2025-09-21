@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandre BRIATTE | Fiche CVL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+    <style>
+        /* Reset et base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFF8F0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        /* En-tête */
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #FF5722, #FFC107);
+            color: white;
+            border-radius: 10px 10px 0 0;
+            position: relative;
+        }
+        header h1 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-style: italic;
+            font-size: 1.2em;
+        }
+        /* Canards en arrière-plan */
+        .ducks {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 100px;
+            opacity: 0.3;
+        }
+        /* Sections */
+        section {
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid #FF5722;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        section h2 {
+            font-family: 'Rajdhani', sans-serif;
+            color: #FF5722;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        /* Compétences */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .skill {
+            flex: 1;
+            min-width: 200px;
+        }
+        .skill h3 {
+            margin-bottom: 5px;
+            color: #795548;
+        }
+        .bar {
+            height: 10px;
+            background-color: #FFE0B2;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(to right, #FF5722, #FFC107);
+            width: 90%;
+        }
+        /* Langues */
+        .languages {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .language {
+            background-color: #FFF3E0;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        .language del {
+            color: #999;
+        }
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #FF5722;
+        }
+        .event {
+            position: relative;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        .event::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #FFC107;
+            border-radius: 50%;
+        }
+        /* Passions */
+        .passions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 15px;
+            text-align: center;
+        }
+        .passion {
+            padding: 10px;
+            background-color: #FFF3E0;
+            border-radius: 8px;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #795548;
+            color: white;
+            border-radius: 0 0 10px 10px;
+        }
+        .contact {
+            margin-bottom: 10px;
+        }
+        .fun-fact {
+            font-style: italic;
+            font-size: 0.9em;
+        }
+        /* Animations */
+        .skill, .event, .passion {
+            transition: transform 0.3s;
+        }
+        .skill:hover, .event:hover, .passion:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- En-tête avec canards -->
+        <header>
+            <img src="./pp.png" alt="Canards en plastique" class="ducks">
+            <h1>Alexandre BRIATTE</h1>
+            <p>Le plus beau de tous les canards, à votre service !</p>
+        </header>
+
+        <!-- Identité -->
+        <section>
+            <h2>📌 Identité</h2>
+            <p><strong>Nom :</strong> Briatte</p>
+            <p><strong>Prénom :</strong> Alexandre</p>
+            <p><strong>Classe :</strong> Terminale C</p>
+            <p><strong>3 mots :</strong> Drôle, Altruiste, Loyal</p>
+        </section>
+
+        <!-- Compétences -->
+        <section>
+            <h2>⚡ Compétences</h2>
+            <div class="skills">
+                <div class="skill">
+                    <h3>À l'écoute</h3>
+                    <div class="bar"><div class="bar-fill"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>Disponible</h3>
+                    <div class="bar"><div class="bar-fill"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>Ambitieux</h3>
+                    <div class="bar"><div class="bar-fill"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>Créatif</h3>
+                    <div class="bar"><div class="bar-fill"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Langues -->
+        <section>
+            <h2>🌍 Langues</h2>
+            <div class="languages">
+                <span class="language">Français</span>
+                <span class="language">Anglais</span>
+                <span class="language"><del>Espagnol</del></span>
+                <span class="language">Russe</span>
+            </div>
+        </section>
+
+        <!-- Expériences -->
+        <section>
+            <h2>🎯 Expériences</h2>
+            <div class="timeline">
+                <div class="event">
+                    <h3>Rallye Citoyen 2023</h3>
+                    <p>Participation active à la victoire.</p>
+                </div>
+                <div class="event">
+                    <h3>Doyen de l'atelier théâtre Zerban</h3>
+                    <p>Animation et coordination des répétitions.</p>
+                </div>
+                <div class="event">
+                    <h3>Urban Trail 2024</h3>
+                    <p>Coureur et soutien pour l'animation.</p>
+                </div>
+                <div class="event">
+                    <h3>Participant NDC 2024 & 2025 (2026 à venir...)</h3>
+                    <p>Engagement dans les projets du lycée.</p>
+                </div>
+                <div class="event">
+                    <h3>Clubs Échecs & Jeux de société</h3>
+                    <p>Membre actif et engagé.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Motivations -->
+        <section>
+            <h2>💡 Motivations</h2>
+            <p>Je veux <strong>participer au bien-être de mes camarades</strong>, <strong>influencer les décisions</strong> pour notre confort, et <strong>pousser des projets innovants</strong> pour améliorer le lycée.</p>
+            <p><em>Un projet confidentiel en préparation...</em></p>
+        </section>
+
+        <!-- Passions -->
+        <section>
+            <h2>❤️ Passions</h2>
+            <div class="passions">
+                <div class="passion">🏸 Badminton</div>
+                <div class="passion">🎭 Théâtre</div>
+                <div class="passion">💻 Informatique</div>
+                <div class="passion">🦆 Canards en plastique (77 !)</div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="contact">
+                <p>📧 alexandre.briatte+cvl@notredamevalenceinnes.fr</p>
+                <p>📸 @leplubo_des_canards</p>
+            </div>
+            <p class="fun-fact">Fun fact : Ma collection de canards en plastique compte <strong>77 spécimens</strong> !</p>
+        </footer>
+    </div>
+</body>
+</html>
