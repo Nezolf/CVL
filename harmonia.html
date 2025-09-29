@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmonia | La sonnerie démocratique</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF9F1C; /* Orange vibrant */
+            --secondary: #8B5CF6; /* Violet */
+            --dark: #1E1B4B; /* Fond sombre */
+            --light: #F8F9FA; /* Texte clair */
+            --gold: #FFD700; /* Accent doré */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Fond animé avec vagues */
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Effet de vagues en plein écran */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 27, 75, 0.9) 0%, rgba(30, 27, 75, 0.9) 50%, rgba(46, 43, 107, 0.8) 100%);
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 200px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200"><path fill="%238B5CF6" d="M0,100C300,200,600,0,900,100C1200,200,1500,0,1800,100V200H0Z" opacity="0.2"/><path fill="%23FF9F1C" d="M0,150C300,250,600,50,900,150C1200,250,1500,50,1800,150V200H0Z" opacity="0.15"/></svg>');
+            background-repeat: repeat-x;
+            background-size: 50% 200px;
+            z-index: -1;
+            animation: wave 15s linear infinite;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* En-tête */
+        header {
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            width: 120px;
+            margin: 0 auto;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 0.5rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            color: var(--light);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Menu toujours visible */
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            background-color: rgba(30, 27, 75, 0.7);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
+
+        .menu {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+            background-color: rgba(139, 92, 246, 0.2);
+        }
+
+        .menu a:hover {
+            background-color: var(--secondary);
+            transform: scale(1.05);
+        }
+
+        /* Sections */
+        section {
+            padding: 3rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--gold);
+            text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 3.5rem;
+            margin: 1rem 0;
+        }
+
+        /* Cartes de prévisualisation */
+        .preview-container {
+            margin-top: 2rem;
+            width: 100%;
+        }
+
+        .preview-title {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+            font-weight: 600;
+        }
+
+        .propositions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .proposition-card {
+            background-color: rgba(46, 43, 107, 0.5);
+            border: 1px solid var(--secondary);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+        }
+
+        .proposition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background-color: rgba(46, 43, 107, 0.7);
+        }
+
+        .proposition-title {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .proposition-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--gold);
+        }
+
+        /* Boutons */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
+            text-decoration: none;
+            margin: 1rem auto;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Appel à l'action */
+        .cta {
+            text-align: center;
+            margin: 3rem auto;
+            max-width: 800px;
+        }
+
+        .cta-text {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* Pied de page */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(30, 27, 75, 0.7);
+            margin-top: 2rem;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu {
+                flex-wrap: wrap;
+                gap: 0.8rem;
+            }
+
+            .menu a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .propositions {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://mistralaichatupprodswe.blob.core.windows.net/chat-images/assistant/83/fa/89/83fa89b5-0515-4900-9374-567b105106fd/5e4c701f-63f9-455b-bba7-0d1ad7104f18/4f0531f4-1f7a-4905-bd7e-372d922306b0/ea8bc896-6f9a-495f-a538-0e4e2f9366de.jpg?sv=2025-01-05&st=2025-09-29T17%3A15%3A33Z&se=2025-09-29T18%3A15%3A33Z&sr=b&sp=rade&sig=GUB7uP3pKt9d1skwivkWWKkp6huFpRAeuUKz8ORSl%2Bo%3D" alt="Logo Harmonia" style="width: 100%; border-radius: 50%;">
+        </div>
+        <h1>Un espace de vote, pour que la démocratie berce vos oreilles.</h1>
+    </header>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="#probleme">Le problème</a></li>
+            <li><a href="#solution">La solution</a></li>
+            <li><a href="#preview">Prévisualisation</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="probleme">
+        <h2 class="section-title">🎵 Le problème</h2>
+        <div class="content">
+            <div class="icon">😤</div>
+            <p>Chaque semaine, une sonnerie imposée s'impose à tous, sans consultation.</p>
+            <p>Avec <strong>Harmonia</strong>, finies les frustrations : <strong>votre voix compte</strong>.</p>
+        </div>
+    </section>
+
+    <section id="solution">
+        <h2 class="section-title">🗳️ La solution</h2>
+        <div class="content">
+            <div class="icon">🎶</div>
+            <p>1. <strong>Proposez</strong> un extrait YouTube (via "Clip") avec un titre.</p>
+            <p>2. L'équipe <strong>valide</strong> la proposition pour éviter les dérives.</p>
+            <p>3. <strong>Votez</strong> du <strong>lundi 8h au vendredi 12h</strong>.</p>
+            <p>4. La sonnerie gagnante est diffusée la <strong>semaine suivante</strong> !</p>
+        </div>
+    </section>
+
+    <section id="preview">
+        <h2 class="section-title">🔮 Prévisualisation</h2>
+        <div class="preview-container">
+            <p class="preview-title">À quoi pourraient ressembler les propositions ?</p>
+            <div class="propositions">
+                <div class="proposition-card">
+                    <h3 class="proposition-title">"Sunflower" - Post Malone (Remix)</h3>
+                    <p>Un classique détendu pour commencer la journée.</p>
+                    <div class="proposition-meta">
+                        <span>Proposé par : Alex B.</span>
+                        <span>⭐ 42 votes</span>
+                    </div>
+                </div>
+                <div class="proposition-card">
+                    <h3 class="proposition-title">"Mii Channel Theme" (8-bit Remix)</h3>
+                    <p>Pour un côté rétro et énergique !</p>
+                    <div class="proposition-meta">
+                        <span>Proposé par : Léa T.</span>
+                        <span>⭐ 37 votes</span>
+                    </div>
+                </div>
+                <div class="proposition-card">
+                    <h3 class="proposition-title">"Victory Fanfare" - Final Fantasy</h3>
+                    <p>Parfait pour célébrer la fin des cours.</p>
+                    <div class="proposition-meta">
+                        <span>Proposé par : Thomas R.</span>
+                        <span>⭐ 58 votes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2 class="section-title">💬 Parlez-en autour de vous !</h2>
+        <p class="cta-text">
+            Ce projet vit grâce à <strong>votre participation</strong>.<br>
+            Vous avez des questions, des idées ou des retours ?<br>
+            Contactez-moi sur Instagram <a href="https://instagram.com/leplubo_des_canards" style="color: var(--gold); text-decoration: underline;">@leplubo_des_canards</a> ou en personne !
+        </p>
+        <a href="https://www.instagram.com/leplubo_des_canards/" class="btn">Me contacter</a>
+    </section>
+
+    <footer id="contact">
+        <p>Harmonia - <strong>Par les élèves, pour les élèves</strong>. 🦆</p>
+    </footer>
+</body>
+</html>
