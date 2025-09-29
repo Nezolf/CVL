@@ -82,11 +82,9 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        /* Menu optimisé pour mobile */
+        /* Menu adaptatif */
         nav {
-            display: flex;
-            justify-content: center;
-            padding: 0.8rem;
+            padding: 0.6rem 0.8rem;
             background-color: rgba(30, 27, 75, 0.7);
             position: sticky;
             top: 0;
@@ -95,30 +93,30 @@
         }
 
         .menu {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 0.5rem;
             list-style: none;
             margin: 0;
             padding: 0;
-            justify-content: center;
         }
 
         .menu a {
+            display: block;
             color: var(--light);
             text-decoration: none;
             font-weight: 600;
-            padding: 0.6rem 1rem;
-            border-radius: 20px;
+            padding: 0.6rem;
+            border-radius: 10px;
             transition: all 0.3s;
             background-color: rgba(139, 92, 246, 0.2);
+            text-align: center;
             font-size: 0.9rem;
-            white-space: nowrap;
         }
 
         .menu a:hover {
             background-color: var(--secondary);
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
 
         /* Sections */
@@ -245,6 +243,20 @@
         }
 
         /* Responsive pour tablettes et PC */
+        @media (min-width: 500px) {
+            .menu {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.6rem;
+            }
+
+            .menu a {
+                padding: 0.6rem 1.1rem;
+                border-radius: 20px;
+            }
+        }
+
         @media (min-width: 768px) {
             h1 {
                 font-size: 2.2rem;
@@ -347,7 +359,7 @@
             Vous avez des questions, des idées ou des retours ?<br>
             Contactez-moi sur Instagram <a href="https://instagram.com/leplubo_des_canards" style="color: var(--gold); text-decoration: underline;">@leplubo_des_canards</a> ou en personne !
         </p>
-        <a href="mailto:alexandre.briatte+cvl@notredamevalenceinnes.fr" class="btn">Me contacter</a>
+        <a href="https://www.instagram.com/leplubo_des_canards/" class="btn">Me contacter</a>
     </section>
 
     <footer id="contact">
