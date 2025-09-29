@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harmonia | La sonnerie démocratique</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #FF9F1C; /* Orange vibrant */
-            --secondary: #8B5CF6; /* Violet */
-            --dark: #1E1B4B; /* Fond sombre */
-            --light: #F8F9FA; /* Texte clair */
-            --gold: #FFD700; /* Accent doré */
+            --primary: #FF9F1C;
+            --secondary: #8B5CF6;
+            --dark: #1E1B4B;
+            --light: #F8F9FA;
+            --gold: #FFD700;
         }
 
         * {
@@ -21,7 +21,6 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        /* Fond animé avec vagues */
         body {
             background-color: var(--dark);
             color: var(--light);
@@ -30,7 +29,7 @@
             min-height: 100vh;
         }
 
-        /* Effet de vagues en plein écran */
+        /* Fond animé avec vagues */
         body::before {
             content: "";
             position: fixed;
@@ -63,32 +62,31 @@
 
         /* En-tête */
         header {
-            padding: 2rem;
+            padding: 1.5rem;
             text-align: center;
-            position: relative;
         }
 
         .logo {
-            width: 120px;
+            width: 100px;
             margin: 0 auto;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            padding: 0.5rem;
+            padding: 0.4rem;
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 700;
             margin-top: 1rem;
             color: var(--light);
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        /* Menu toujours visible */
+        /* Menu optimisé pour mobile */
         nav {
             display: flex;
             justify-content: center;
-            padding: 1rem;
+            padding: 0.8rem;
             background-color: rgba(30, 27, 75, 0.7);
             position: sticky;
             top: 0;
@@ -98,20 +96,24 @@
 
         .menu {
             display: flex;
-            gap: 1.5rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
             list-style: none;
             margin: 0;
             padding: 0;
+            justify-content: center;
         }
 
         .menu a {
             color: var(--light);
             text-decoration: none;
             font-weight: 600;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
+            padding: 0.6rem 1rem;
+            border-radius: 20px;
             transition: all 0.3s;
             background-color: rgba(139, 92, 246, 0.2);
+            font-size: 0.9rem;
+            white-space: nowrap;
         }
 
         .menu a:hover {
@@ -121,15 +123,15 @@
 
         /* Sections */
         section {
-            padding: 3rem 1.5rem;
+            padding: 2rem 1rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             text-align: center;
             color: var(--gold);
             text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
@@ -139,32 +141,32 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1rem;
             text-align: center;
         }
 
         .icon {
-            font-size: 3.5rem;
-            margin: 1rem 0;
+            font-size: 3rem;
+            margin: 0.5rem 0;
         }
 
         /* Cartes de prévisualisation */
         .preview-container {
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             width: 100%;
         }
 
         .preview-title {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
             color: var(--light);
             font-weight: 600;
         }
 
         .propositions {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: 1fr;
+            gap: 1rem;
             width: 100%;
         }
 
@@ -172,14 +174,14 @@
             background-color: rgba(46, 43, 107, 0.5);
             border: 1px solid var(--secondary);
             border-radius: 10px;
-            padding: 1.5rem;
+            padding: 1.2rem;
             transition: all 0.3s;
             backdrop-filter: blur(5px);
         }
 
         .proposition-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             background-color: rgba(46, 43, 107, 0.7);
         }
 
@@ -187,14 +189,14 @@
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .proposition-meta {
             display: flex;
             justify-content: space-between;
-            margin-top: 1rem;
-            font-size: 0.9rem;
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
             color: var(--gold);
         }
 
@@ -203,15 +205,16 @@
             display: inline-block;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             color: var(--dark);
-            padding: 0.8rem 1.5rem;
+            padding: 0.7rem 1.3rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 20px;
             font-weight: 700;
             text-decoration: none;
             margin: 1rem auto;
             cursor: pointer;
             transition: all 0.2s;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 0.9rem;
         }
 
         .btn:hover {
@@ -222,39 +225,47 @@
         /* Appel à l'action */
         .cta {
             text-align: center;
-            margin: 3rem auto;
+            margin: 2rem auto;
             max-width: 800px;
         }
 
         .cta-text {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
         }
 
         /* Pied de page */
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 1.5rem;
             background-color: rgba(30, 27, 75, 0.7);
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             backdrop-filter: blur(5px);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .menu {
-                flex-wrap: wrap;
-                gap: 0.8rem;
+        /* Responsive pour tablettes et PC */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
             }
 
             .menu a {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.9rem;
+                padding: 0.6rem 1.2rem;
+                font-size: 1rem;
             }
 
             .propositions {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
             }
         }
     </style>
@@ -336,7 +347,7 @@
             Vous avez des questions, des idées ou des retours ?<br>
             Contactez-moi sur Instagram <a href="https://instagram.com/leplubo_des_canards" style="color: var(--gold); text-decoration: underline;">@leplubo_des_canards</a> ou en personne !
         </p>
-        <a href="https://www.instagram.com/leplubo_des_canards/" class="btn">Me contacter</a>
+        <a href="mailto:alexandre.briatte+cvl@notredamevalenceinnes.fr" class="btn">Me contacter</a>
     </section>
 
     <footer id="contact">
