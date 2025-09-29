@@ -163,6 +163,66 @@
             background-color: #FFC107;
             border-radius: 50%;
         }
+        /* Section Mes Idées */
+        .ideas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .idea-card {
+            background-color: #FFF3E0;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #FF5722;
+        }
+
+        .idea-card h3 {
+            color: #FF5722;
+            margin-bottom: 15px;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .idea-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .idea-card li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .idea-card li::before {
+            content: "•";
+            color: #FFC107;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .idea-card strong {
+            color: #795548;
+        }
+
+        /* Mini-bouton pour Harmonia */
+        .mini-button {
+            display: inline-block;
+            padding: 3px 8px;
+            background-color: #FF5722;
+            color: white;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 0.8em;
+            transition: background-color 0.2s;
+        }
+
+        .mini-button:hover {
+            background-color: #e64a19;
+        }
+
         /* Passions */
         .passions {
             display: grid;
@@ -248,6 +308,45 @@
             <p><a href="./harmonia.html" class="project-button">Découvrir le projet</a></p>
         </section>
 
+        <!-- Mes Idées -->
+        <section>
+            <h2>🌟 Mes Idées</h2>
+            <div class="ideas-grid">
+                <!-- Bien-être -->
+                <div class="idea-card">
+                    <h3>💆 Bien-être</h3>
+                    <ul>
+                        <li><strong>Cellules d'écoute</strong> : Mise en place de permanences confidentielles contre le harcèlement et le mal-être, animées par des élèves sélectionnés et volontaires !</li>
+                        <li><strong>Alimentation équilibrée</strong> : Options végétariennes, halal et casher <strong>plus visibles et disponibles quotidiennement</strong> au self.</li>
+                        <li><strong>Distributeurs de protections hygiéniques</strong> : Gratuits et accessibles dans tous les sanitaires féminins.</li>
+                        <li><strong>Écoute active</strong> : Boîte à idées (anonyme au besoin) du CVL pour recueillir vos besoins.</li>
+                    </ul>
+                </div>
+
+                <!-- Innovation Pédagogique -->
+                <div class="idea-card">
+                    <h3>💡 Innovation Pédagogique</h3>
+                    <ul>
+                        <li><strong>Groupes d'étude solidaires</strong> : Système de <strong>tutorat entre élèves</strong> pour du soutien scolaire et de la remise à niveau.</li>
+                        <li><strong>Ouverture à la culture</strong> : Sorties, conférences et ateliers <strong>multidisciplinaires</strong> (cinéma, musique, arts, sciences) pour élargir nos horizons.</li>
+                        <li><strong>Projet démocratique</strong> : Le projet "Harmonia" à découvrir <a href="./harmonia.html" class="mini-button">ici</a>.</li>
+                    </ul>
+                </div>
+
+                <!-- Inclusion -->
+                <div class="idea-card">
+                    <h3>🤝 Inclusion</h3>
+                    <ul>
+                        <li><strong>Accueil des nouveaux</strong> : Parrainage par des élèves volontaires pour les 2ndes et nouveaux arrivants.</li>
+                        <li><strong>Accessibilité renforcée</strong> : <strong>sensibilisation des élèves</strong> aux handicaps visibles et invisibles (DYS, troubles anxieux, etc.).</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+
+
         <!-- Langues -->
         <section>
             <h2>🌍 Langues</h2>
@@ -293,7 +392,7 @@
                 <div class="passion">🏸 Badminton</div>
                 <div class="passion">🎭 Théâtre</div>
                 <div class="passion">💻 Informatique</div>
-                <div class="passion">🦆 Canards en plastique (77 !)</div>
+                <div class="passion">🦆 Canards en plastique</div>
             </div>
         </section>
 
@@ -308,6 +407,5 @@
     </div>
 </body>
 </html>
-
 
 
